@@ -1,0 +1,154 @@
+<Interface>:
+	orientation: 'horizontal'
+	padding: [5, 5, 5, 5]
+	canvas:
+		Color:
+			rgba: 1, 1, 1, 1
+		Rectangle:
+			pos: self.pos
+			size: self.size
+			source: './images/pidubs-normal.png'
+
+	GridLayout:
+		cols: 2
+		rows: 2
+		Label:
+			source: './images/uw-doc-husk.png'
+			pos: self.pos
+			size_hint: (1, 0.15)
+			color: 232/255, 211/255, 162/255, 1
+	#		font_name: './fonts/open_sans/open_sans_700.ttf'
+	#		font_size: '48sp'
+	#		halign: 'left'
+	#		size_hint_x: 0.75
+	#		size_hint_y: 0.25
+	#		pos_hint: {'x': 0, 'top': 1}
+	#		text: 'Huskontroller'
+
+		PowerToggle:
+			background_color_down: 51/255, 0/255, 111/255, 0.9
+			background_color_normal: 51/255, 0/255, 111/255, 0.3
+			background_color: 51/255, 0/255, 111/255, 0.3
+			background_normal: ''
+			font_name: './fonts/open_sans/open_sans_regular.ttf'
+			font_size: 24
+			size_hint: (1, 0.15)
+			text: 'Turn Projector On'
+
+		InputPanel:
+			cols: 2
+			padding: [10, 10, 10, 10]
+			pos_hint: {'x': 0, 'y': 73}
+			spacing: 5
+			InputToggle:
+				allow_no_selection: False
+				background_color_down: 0, 90/255, 45/255, 0.9
+				background_color_normal: 0, 90/255, 45/255, 0.3
+				background_color: 0, 90/255, 45/255, 0.3
+				background_down: ''
+				background_normal: ''
+				color: 25/255, 25/255, 25/255, 1
+				color_down: 250/255, 250/255, 250/255, 1
+				color_normal: 25/255, 25/255, 25/255, 1
+				bold: True
+				font_name: './fonts/open_sans/open_sans_regular.ttf'
+				font_size: 24
+				group: 'input'
+				output: 'podium'
+				text: 'Podium PC'
+			InputToggle:
+				allow_no_selection: False
+				background_color_down: 210/255, 210/255, 10/255, 0.9
+				background_color_normal: 210/255, 210/255, 10/255, 0.3
+				background_color: 210/255, 210/255, 10/255, 0.3
+				color: 25/255, 25/255, 25/255, 1
+				color_down: 250/255, 250/255, 250/255, 1
+				color_normal: 25/255, 25/255, 25/255, 1
+				background_down: ''
+				background_normal: ''
+				#color: 0, 0, 0, 1
+				font_name: './fonts/open_sans/open_sans_regular.ttf'
+				font_size: 24
+				group: 'input'
+				output: 'hdmi'
+				text: 'HDMI'
+			InputToggle:
+				allow_no_selection: False
+				background_color_down: 200/255, 30/255, 30/255, 0.9
+				background_color_normal: 200/255, 30/255, 30/255, 0.3
+				background_color: 200/255, 30/255, 30/255, 0.3
+				background_down: ''
+				background_normal: ''
+				color: 25/255, 25/255, 25/255, 1
+				color_down: 250/255, 250/255, 250/255, 1
+				color_normal: 25/255, 25/255, 25/255, 1
+				font_name: './fonts/open_sans/open_sans_regular.ttf'
+				font_size: 24
+				group: 'input'
+				output: 'usb-c'
+				text: 'USB-C'
+			InputToggle:
+				allow_no_selection: False
+				background_color_down: 0, 25/255, 90/255, 0.9
+				background_color_normal: 0, 25/255, 90/255, 0.3
+				background_color: 0, 25/255, 90/255, 0.3
+				background_down: ''
+				background_normal: ''
+				color: 25/255, 25/255, 25/255, 1
+				color_down: 250/255, 250/255, 250/255, 1
+				color_normal: 25/255, 25/255, 25/255, 1
+				font_name: './fonts/open_sans/open_sans_regular.ttf'
+				font_size: 24
+				group: 'input'
+				output: 'vga'
+				text: 'VGA'
+		
+		BoxLayout:
+			orientation: 'horizontal'
+			Label:
+			BoxLayout:
+				orientation: 'vertical'
+				padding: 10
+				spacing: 5
+				BlankToggle:
+					background_color: 232/255, 211/255, 162/255, 0.8
+					background_normal: ''
+					font_name: './fonts/open_sans/open_sans_regular.ttf'
+					font_size: 24
+					text: 'Blank'
+				FreezeToggle:
+					background_color: 232/255, 211/255, 162/255, 0.8
+					background_normal: ''
+					font_name: './fonts/open_sans/open_sans_regular.ttf'
+					font_size: 24
+					text: 'Freeze'
+	BoxLayout:
+		size_hint: (0.1, 1)
+		orientation: 'vertical'
+		Label:
+			color: 51/255, 0, 111/255, 1
+			font_name: './fonts/open_sans/open_sans_regular.ttf'
+			size_hint: (1, 0.1)
+			text_size: (None, 18)
+			text: "Volume"
+		VolumeSlider:
+			cursor_image: './images/w-logo.png'
+			cursor_width: '48sp'
+			id: volume_slider
+			min: 2
+			max: 100
+			orientation: 'vertical'
+			step: 5
+			value: 10
+		Label:
+			color: 51/255, 0, 111/255, 1
+			font_name: './fonts/open_sans/open_sans_regular.ttf'
+			size_hint: (1, 0.1)
+			text: str(int(volume_slider.value))
+		MuteButton:
+			background_color: 232/255, 211/255, 162/255, 0.8
+			background_normal: ''
+			font_name: './fonts/open_sans/open_sans_regular.ttf'
+			font_size: 18
+			size_hint: (1, 0.15)
+			text: 'Mute'

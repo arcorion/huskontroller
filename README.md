@@ -1,4 +1,4 @@
-# Huskontroller" 
+# Huskontroller
 
 ## Touch Control Hardware
 The following components are necessary to build the touch controls:

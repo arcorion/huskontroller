@@ -1,5 +1,6 @@
 import logging
 import serial
+from pathlib import Path
 from serial.tools import list_ports
 
 class Extron:
@@ -13,6 +14,9 @@ class Extron:
         self.logger = logging.getLogger('extron_serial')
         self.logger.setLevel(logging.DEBUG)
         
+        log_path = Path('logs')
+        if not log_path.exists():
+            log_path.mkdir()
         file_handler = logging.FileHandler('logs/extron_serial.log')
         file_handler.setLevel(logging.DEBUG)
         

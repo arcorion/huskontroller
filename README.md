@@ -1,4 +1,7 @@
 # Huskontroller
+This is a utility which provides a user interface for the AV systems used
+with the UW Communications classrooms. It is very simple, very badly written,
+but also very useful for our needs.
 
 ## Touch Control Hardware
 The following components are necessary to build the touch controls:

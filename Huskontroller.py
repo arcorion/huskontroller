@@ -1,7 +1,10 @@
 # Resolution - 800x480
 from kivy.app import App
 from kivy.clock import Clock
+from kivy.config import Config
+from kivy.core.window import Window
 from kivy.graphics import Color, Line, Rectangle
+from kivy.lang.builder import Builder
 from kivy.properties import ListProperty
 from kivy.uix.behaviors import ToggleButtonBehavior
 from kivy.uix.boxlayout import BoxLayout
@@ -12,9 +15,16 @@ from kivy.uix.slider import Slider
 from kivy.uix.togglebutton import ToggleButton
 from kivy.uix.widget import Widget
 
-# Just for testing - remove in production
-# from kivy.core.window import Window
+# Use this in testing - remove in production
 # Window.size = (800, 480)
+
+# Use this in production
+
+Config.set('graphics', 'fullscreen', 'auto')
+Config.set('graphics', 'width', '800')
+Config.set('graphics', 'height', '480')
+Config.set('graphics', 'borderless', '1')
+Builder.load_file('Huskontroller.kv')
 
 # Disable the following if using the test_serial.py module 
 from extron_serial import Extron

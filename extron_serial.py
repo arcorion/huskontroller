@@ -31,7 +31,7 @@ class Extron:
             port_names = []
             for port in port_list:
                 port_names += port
-            self.extron_device = serial.Serial('COM3', 9600)
+            self.extron_device = serial.Serial(port_names[0], 9600)
             self.logger.info(f'Device {self.extron_device} created.')
         except serial.SerialException:
             self.logger.error(f'Error opening connection to port: {port_list[0]}')

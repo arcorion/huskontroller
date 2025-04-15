@@ -17,6 +17,7 @@ from kivy.uix.widget import Widget
 
 # Use this in testing - remove in production
 # Window.size = (800, 480)
+Window.show_cursor = False
 
 # Use this in production
 

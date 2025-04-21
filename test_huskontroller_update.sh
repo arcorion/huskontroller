@@ -10,7 +10,7 @@ update_log="$(pwd)/update.log"
 if [ -d "$husk_dir" ]; then
 	echo "Backing up $husk_dir to $backup_dir" >> $update_log
 	mv "$husk_dir" "$backup_dir"
-	git clone https://github.com/ccrader-uw/huskontroller.git
+	git clone https://github.com/arcorion/huskontroller.git
 fi
 
 # If the new version doesn't exist, restore from backup

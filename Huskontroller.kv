@@ -62,14 +62,7 @@
 				background_color_down: 0, 90/255, 45/255, 0.9
 				background_color_normal: 0, 90/255, 45/255, 0.3
 				background_color: 0, 90/255, 45/255, 0.3
-				background_down: ''
-				background_normal: ''
-				color: 25/255, 25/255, 25/255, 1
-				color_down: 250/255, 250/255, 250/255, 1
 				color_normal: 25/255, 25/255, 25/255, 1
-				bold: True
-				font_name: './fonts/open_sans/open_sans_regular.ttf'
-				font_size: 24
 				group: 'input'
 				output: 'podium'
 				text: 'Podium PC'
@@ -78,14 +71,7 @@
 				background_color_down: 210/255, 210/255, 10/255, 0.9
 				background_color_normal: 210/255, 210/255, 10/255, 0.3
 				background_color: 210/255, 210/255, 10/255, 0.3
-				color: 25/255, 25/255, 25/255, 1
-				color_down: 250/255, 250/255, 250/255, 1
 				color_normal: 25/255, 25/255, 25/255, 1
-				background_down: ''
-				background_normal: ''
-				#color: 0, 0, 0, 1
-				font_name: './fonts/open_sans/open_sans_regular.ttf'
-				font_size: 24
 				group: 'input'
 				output: 'hdmi'
 				text: 'HDMI'
@@ -94,13 +80,7 @@
 				background_color_down: 200/255, 30/255, 30/255, 0.9
 				background_color_normal: 200/255, 30/255, 30/255, 0.3
 				background_color: 200/255, 30/255, 30/255, 0.3
-				background_down: ''
-				background_normal: ''
-				color: 25/255, 25/255, 25/255, 1
-				color_down: 250/255, 250/255, 250/255, 1
 				color_normal: 25/255, 25/255, 25/255, 1
-				font_name: './fonts/open_sans/open_sans_regular.ttf'
-				font_size: 24
 				group: 'input'
 				output: 'usb-c'
 				text: 'USB-C'
@@ -109,13 +89,7 @@
 				background_color_down: 0, 25/255, 150/255, 0.9
 				background_color_normal: 0, 10/255, 150/255, 0.3
 				background_color: 0, 10/255, 150/255, 0.3
-				background_down: ''
-				background_normal: ''
-				color: 25/255, 25/255, 25/255, 1
-				color_down: 250/255, 250/255, 250/255, 1
 				color_normal: 25/255, 25/255, 25/255, 1
-				font_name: './fonts/open_sans/open_sans_regular.ttf'
-				font_size: 24
 				group: 'input'
 				output: 'vga'
 				text: 'VGA'
@@ -182,4 +156,11 @@
 			size_hint: (1, 0.15)
 			text: 'Mute'
 
-	
+# Defines ToggleButton widgets with a common set of defaults
+<ToggleButton>:
+	background_normal: ''
+	background_down: ''
+	font_name: './fonts/open_sans/open_sans_regular.ttf'
+	font_size: 24
+	color: 25/255, 25/255, 25/255, 1
+	color_down: 250/255, 250/255, 250/255, 1

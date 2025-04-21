@@ -65,7 +65,10 @@ class BlankToggle(ToggleButton):
             self.background_color = self.background_color_normal
             self.color = self.color_normal
             self.text = 'Blank'
-    
+
+class DisplayStatePanel(BoxLayout):
+    pass
+
 class FreezeToggle(ToggleButton):
     """
     Class representing freeze button.

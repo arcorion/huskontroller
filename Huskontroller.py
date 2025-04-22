@@ -39,7 +39,19 @@ class Interface(BoxLayout):
     """
     Class widget representing the screen layout as a whole.
     """
-    pass
+    def __init__(self, **kwargs):
+        super(Interface, self).__init__(**kwargs)
+
+        freeze_toggle = FreezeToggle()
+        blank_toggle = BlankToggle()
+
+        power_toggle = PowerToggle(freeze_toggle=freeze_toggle,
+                                 blank_toggle=blank_toggle)
+
+        self.add_widget(freeze_toggle)
+        self.add_widget(blank_toggle)
+        self.add_widget(power_toggle)
+
 
 class Toggles(GridLayout):
     """
@@ -171,8 +183,11 @@ class PowerToggle(ToggleButton):
     """
     background_color_normal = ListProperty([0, 0, 0, 0])
     background_color_down = ListProperty([0, 0, 0, 0])
-    def __init__(self, **kwargs):
+    def __init__(self, freeze_toggle=None,
+                 blank_toggle=None, **kwargs):
         super(PowerToggle, self).__init__(**kwargs)
+        self.freeze_toggle = freeze_toggle
+        self.blank_toggle = blank_toggle
 
     def on_state(self, widget, value):
         if value == 'down':
@@ -182,6 +197,11 @@ class PowerToggle(ToggleButton):
             self.text = 'Turn Projector Off'
             message = PowerOnMessage()
             message.open()
+            
+            if self.freeze_toggle:
+                self.freeze_toggle.state = 'normal'
+            if self.blank_toggle:
+                self.blank_toggle.state = 'normal'
         else:
             switcher.turn_projector_off()
             self.background_color = self.background_color_normal
